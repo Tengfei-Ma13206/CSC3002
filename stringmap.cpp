@@ -184,7 +184,14 @@ int StringMap::insertKey(const string & key) {
          count++;
          return index;
       } 
-      index++;
+      if (buckets[index].key != key)
+      {
+         index++;
+      }
+      else
+      {
+         return index;
+      } 
    }
    return -1;
 }
